@@ -29,3 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.add("close-sidebar");
     });
 });
+
+
+
+// scroll down
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollDownIcon = document.querySelector(".scroll-down");
+    
+    scrollDownIcon.addEventListener("click", function () {
+        const nextSection = document.querySelector(".info-section"); // Change this to your next section
+
+        if (nextSection) {
+            window.scrollTo({
+                top: nextSection.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    });
+});

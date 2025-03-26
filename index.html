@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <video class="back-vid" loop autoplay muted plays-inline src="videos/galaxy.mp4" type="video/mp4"></video>
-        
+
         <header>
             <div class="left">
 
@@ -35,30 +35,30 @@
                 <a href=""><i class='bx bxl-linkedin-square'></i></a>
 
             </div>
-            
+
 
             <div class="menu-icon"><i class='bx bx-menu'></i></div>
         </header>
 
         <div class="sidebar">
-            
+
             <div class="close-icon"><i class='bx bx-x'></i>
             </div>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#info">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#info">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
 
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-youtube' ></i></a>
-                    <a href="#"><i class='bx bxl-github' ></i></a>
-                    <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
-                    
-                </div>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+
             </div>
-            
+        </div>
+
         <div class="blackhole-box">
 
             <video loop autoplay muted plays-inline src="videos/blackhole.mp4" type="video/mp4"></video>
@@ -75,14 +75,14 @@
                 </h1>
                 <p>I a'm Full Stack Developer with Experience in Modern websites and AI-Powered Websites and SOftware
                     Developement. Check out my and Skills</p>
-                <button><i class='bx bx-send'></i>Contact Me</button>
+                <button><i class='bx bx-send'></i> Contact Me </button>
             </div>
 
-            <div class="hero-vid-box"><video class="autoBlur" autoplay loop muted plays-inline src="videos/hero-video.mp4"
-                    type="video/mp4"></video>
+            <div class="hero-vid-box"><video class="autoBlur" autoplay loop muted plays-inline
+                    src="videos/hero-video.mp4" type="video/mp4"></video>
             </div>
 
-            <div class="scroll-down"></div>
+            <div class="scroll-down"><a href="#info"></a></div>
         </section>
 
         <section class="info-section" id="info">
@@ -232,26 +232,27 @@
             <div class="social-box autoBlur">
 
 
-                <a href="#"><i class='bx bxs-phone-call' ></i> +91 7019523960</a>
-                <a href="#"><i class='bx bxl-telegram' ></i>Contact Example.com</a>
-                <a href="#"><i class='bx bxl-linkedin-square' ></i>Contact Example.com</a>
-            
+                <a href="#"><i class='bx bxs-phone-call'></i> +91 7019523960</a>
+                <a href="#"><i class='bx bxl-telegram'></i>Contact Example.com</a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i>Contact Example.com</a>
 
 
-            <div class="social-icons">
-                    <a href="#"><i class='bx bxl-youtube' ></i></a>
-                    <a href="#"><i class='bx bxl-instagram' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-    
+
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+
                 </div>
 
             </div>
 
-            
+
 
             <div class="contact-box autoBlur">
 
-                <p>Whether you'r looking to build a new websites, imporving your existing platform, or bring a unique project to file. i'am here to help.</p>
+                <p>Whether you'r looking to build a new websites, imporving your existing platform, or bring a unique
+                    project to file. i'am here to help.</p>
 
                 <p>Full Name</p>
                 <input type="text" placeholder="Your Full Name">
@@ -262,7 +263,7 @@
                 <p>Your Message</p>
                 <input class="input-message" placeholder="Share Your thoughts....">
 
-                <button><i class='bx bx-send' ></i>Send Message</button>
+                <button><i class='bx bx-send'></i>Send Message</button>
             </div>
         </section>
 
@@ -279,41 +280,41 @@
             const closeIcon = document.querySelector(".close-icon");
             const menuIcon = document.querySelector(".menu-icon"); // Make sure you have a menu button
             const sidebarLinks = document.querySelectorAll(".sidebar ul li a");
-        
+
             // Open Sidebar
             if (menuIcon) {
                 menuIcon.addEventListener("click", function () {
                     sidebar.classList.add("open-sidebar");
                 });
             }
-        
+
             // Close Sidebar
             closeIcon.addEventListener("click", function () {
                 sidebar.classList.remove("open-sidebar");
             });
-        
+
             // Smooth scrolling & close sidebar when link is clicked
             sidebarLinks.forEach(link => {
                 link.addEventListener("click", function (event) {
                     event.preventDefault(); // Stop default jump
-        
+
                     const targetId = this.getAttribute("href").substring(1);
                     const targetSection = document.getElementById(targetId);
-        
+
                     if (targetSection) {
                         window.scrollTo({
-                            top: targetSection.offsetTop, 
+                            top: targetSection.offsetTop,
                             behavior: "smooth"
                         });
-        
+
                         // Close sidebar after clicking
                         sidebar.classList.remove("open-sidebar");
                     }
                 });
             });
         });
-        </script>
-        
+    </script>
+
 
     <script src="app.js"></script>
 </body>
