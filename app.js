@@ -1,40 +1,31 @@
-const video1= document.getElementById('projectVideo1');
-const video2= document.getElementById('projectVideo2');
-const video3= document.getElementById('projectVideo3');
-const hoverSign= document.querySelector('.hover-sign');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu-icon");
+    const sidebar = document.querySelector(".sidebar");
+    const closeIcon = document.querySelector(".close-icon");
 
-//sidebar elements //
+    function checkScreenSize() {
+        if (window.innerWidth >= 1024) {
+            menuIcon.style.display = "none"; // Hide on desktop
+            sidebar.classList.remove("close-sidebar"); // Keep sidebar open on desktop
+        } else {
+            menuIcon.style.display = "block"; // Show on mobile
+            sidebar.classList.add("close-sidebar"); // Ensure sidebar starts closed in mobile
+        }
+    }
 
-const sideBar = document.querySelector('.sidebar');
-const menu = document.querySelector('.menu-icon');
-const close = document.querySelector('.close-icon');
+    // Run check on page load and resize
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
 
+    // Open Sidebar (Mobile Mode)
+    menuIcon.addEventListener("click", function () {
+        sidebar.classList.add("open-sidebar");
+        sidebar.classList.remove("close-sidebar");
+    });
 
-const videoList=[video1, video2, video3];
-
-videoList.forEach(function(video){
-    video.addEventListener('mouseover', function(){
-        video.play();
-        hoverSign.classList.add('active');
-    })
-    video.addEventListener('mouseout', function(){
-        video.pause();
-        hoverSign.classList.remove('active');
-    })
-})
-
-
-//sidebar elements //
-
-
-menu.addEventListener('click', function(){
-    sideBar.classList.remove('close-sidebar');
-    sideBar.classList.add('open-sidebar');
-})
-
-
-
-close.addEventListener('click', function(){
-    sideBar.classList.remove('open-sidebar');
-    sideBar.classList.add('close-sidebar');
-})
+    // Close Sidebar
+    closeIcon.addEventListener("click", function () {
+        sidebar.classList.remove("open-sidebar");
+        sidebar.classList.add("close-sidebar");
+    });
+});

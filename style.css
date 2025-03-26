@@ -10,6 +10,7 @@ html{
     scroll-behavior: smooth;
 }
 
+
 .container{
     position: relative;
     width: 100%;
@@ -70,11 +71,78 @@ header ul li{
     list-style: none;
 }
 
+
 header ul a{
     text-decoration: none;
     color: white;
     font-weight: 700;
     margin: 0 10px;
+}
+
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding: 10px 10px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 69, 0.30);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px #727fde65;
+}
+
+header ul li {
+    list-style: none;
+    position: relative;
+    padding: 10px 20px;
+    transition: all 0.4s ease-in-out;
+    border-radius: 50px; /* Default rounded */
+    overflow: hidden;
+}
+
+header ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Bubble Effect */
+header ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    opacity: 0;
+}
+
+/* On Hover: Bubble Expands */
+header ul li:hover::before {
+    width: 120%;
+    height: 100%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle bubble effect */
+}
+
+header ul li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+}
+
+header ul li:hover a {
+    color: #f1f0f2;
+    text-shadow: 0 0 10px #6b19f0;
 }
 
 .box-icons{
@@ -902,6 +970,10 @@ footer h3{
 
 
 
+
+
+
+
 /* Blur Effect */
 
 .autoBlur{
@@ -1000,6 +1072,8 @@ footer h3{
         height: auto;
     }
 }
+
+
 
 
 
@@ -1235,4 +1309,11 @@ footer h3{
 .menu-icon{
     display: inline;
 }
+
+
+
+
+
+
+
 
